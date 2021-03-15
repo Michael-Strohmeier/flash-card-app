@@ -176,7 +176,7 @@ class Kana {
     this.w = w;
     this.h = h;
     
-    this.textSize = this.w / 10;
+    this.textSize = this.h / 10;
     
     this.blue = color(66, 133, 244, 200);
     this.red = color(219, 68, 55, 200);
@@ -222,7 +222,7 @@ class Kana {
     
     push();
 
-    translate(this.w / 2, this.h / 1.53);
+    translate(this.w / 2, this.h / 2.2 + this.textSize * 1.6);
     rectMode(CENTER);
     fill(255);
 
