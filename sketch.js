@@ -222,7 +222,7 @@ class Kana {
     
     push();
 
-    translate(this.w / 2, this.h / 1.7);
+    translate(this.w / 2, this.h / 1.53);
     rectMode(CENTER);
     fill(255);
 
