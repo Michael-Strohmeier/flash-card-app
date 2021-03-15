@@ -35,6 +35,8 @@ class NavBarTab {
     this.y = y;
     this.w = w;
     this.h = h;
+    
+    this.iconSize = h / 1.5;
   }
   
   setActive() {
@@ -60,15 +62,24 @@ class NavBarTab {
   draw() {
     push();
     //noStroke();
-    let c = 100;
+    let c = 0;
     
     if (this.isActive == true) {
       c = 255;
+      //　CHANGE THE ICON INSTEAD OF THE FILL COLOR
     }
     
-    fill(c, c, c);
+    fill(255);
     
     rect(this.x, this.y, this.w, this.h);
+    pop();
+    
+    push();
+    fill(c, 0, 0);
+    rectMode(CENTER);
+    translate(this.x + this.w / 2, this.y + (this.h / 2));
+    rect(0, 0, this.iconSize, this.iconSize);
+
     pop();
   }
 }
@@ -205,13 +216,13 @@ class Kana {
 
     textAlign(CENTER, CENTER);
     fill(255);
-    textSize(130);
+    textSize(this.textSize * 2.5);
     text(romajiTable[this.currentIndex][1], 0, 0);
     pop();
     
     push();
 
-    translate(this.w / 2, this.h / 1.55);
+    translate(this.w / 2, this.h / 1.7);
     rectMode(CENTER);
     fill(255);
 
